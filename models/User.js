@@ -3,8 +3,8 @@ const moment = require('moment');
 const now = moment();
 
 const UserSchema = new mongoose.Schema({
-    email: {type: String, default: ''},
-    username: {type: String, default: ''},
+    email: {type: String, unique: true, default: ''},
+    username: {type: String, unique: true, default: ''},
     password: {type: String, default: ''},
     timestamp: {type: String, default: now.format('dddd, MMMM Do YYYY, h:mm:ss a')}
 });

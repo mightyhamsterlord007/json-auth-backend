@@ -9,8 +9,10 @@ require('dotenv').config();
 
 var mongoose = require('mongoose');
 
+//process.env.MONGODB_URI
+
 mongoose
-  .connect(process.env.MONGODB_URI, { useNewUrlParser: true})
+  .connect('mongodb://localhost:27017/json-authentication', { useNewUrlParser: true})
   .then(() => console.log('MONGODB CONNECTED'))
   .catch(err => console.log(err));
 
