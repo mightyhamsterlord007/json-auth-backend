@@ -32,4 +32,13 @@ router.post('/signup', function(req, res, next) {
   
 });
 
+router.post('/login', function(req, res, next) {
+  
+  userController
+    .login(req.body)
+    .then(user => res.json(user))
+    .catch(err => res.json(err));
+ 
+ });
+
 module.exports = router;
