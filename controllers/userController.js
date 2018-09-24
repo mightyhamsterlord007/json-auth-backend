@@ -31,7 +31,7 @@ module.exports = {
                                 reject(err);
                             } else {
                                 newUser.password = hashedPassword;
-
+                                console.log(newUser)
                                 newUser.
                                     save()
                                     .then(user => resolve(user))

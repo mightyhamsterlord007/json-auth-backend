@@ -20,14 +20,14 @@ router.post('/signup', function(req, res, next) {
   if (!isValid) {
     return res.status(400).json(errors);
   }
-  
+
   userController.signUp(signUpInfo)
     .then(user => {
 
       res.status(200).json({
         data: user
       });
-      
+
     })
     .catch(err => {
 
@@ -39,11 +39,11 @@ router.post('/signup', function(req, res, next) {
       });
 
     });
-  
+
 });
 
 router.post('/login', function(req, res, next) {
-   
+
   const { errors, isValid } = loginChecker(req.body);
 
   if (!isValid) {
@@ -54,7 +54,7 @@ router.post('/login', function(req, res, next) {
     .login(req.body)
     .then(user => res.json(user))
     .catch(err => res.json(err));
- 
+
  });
 
 module.exports = router;
